@@ -1,0 +1,12 @@
+#' Tabla con los indicadores de SIMEL con sus respectivos IDs.
+#'
+#' @format Un data frame con 259 filas y 4 columnas:
+#' \describe{
+#'   \item{id_number }{Número de la tabla.}
+#'   \item{id}{Nombre en código de la tabla (dataflow).}
+#'   \item{hp}{Fuente de los datos.}
+#'   \item{Tabla}{Nombre de la tabla de datos.}
+#'
+#' }
+#'
+"tabla_indicadores"

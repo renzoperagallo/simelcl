@@ -13,3 +13,5 @@ usethis::use_package(
   remotes = "git::https://github.com/eblondel/rsdmx@main"
   )
 1
+
+usethis::use_package("rsdmx", type = "Imports")

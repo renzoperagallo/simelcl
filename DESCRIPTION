@@ -1,14 +1,13 @@
 Package: simelcl
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Datos SIMEL Chile
+Version: 0.0.1.9000
 Authors@R: 
     person("Renzo", "Peragallo", , "renzo.ignacio.pd@gmail.com", role = "aut")
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: Permite descargar datos de SIMEL Chile directo en R en un formato amable.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
-  rsdmx (>= 0.6-5)
-  dplyr
+    rsdmx,
+    dplyr
