@@ -4,10 +4,13 @@
 \alias{get_data}
 \title{Obtener data SIMEL}
 \usage{
-get_data(dataflow)
+get_data(dataflow, ...)
 }
 \arguments{
-\item{dataflow}{Un único valor de clase "character" con el nombre del dataflow (id en tabla indicadores).}
+\item{dataflow}{Un único valor de clase "character" con el nombre del
+dataflow (id en tabla indicadores).}
+
+\item{...}{Otros argumentos de readSMDX}
 }
 \value{
 Un objeto de clase "data.frame" con los datos de una tabla en SIMEL.

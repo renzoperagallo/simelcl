@@ -14,10 +14,6 @@ Un data frame con 259 filas y 4 columnas:
 
 }
 }
-\usage{
-tabla_indicadores
-}
 \description{
 Tabla con los indicadores de SIMEL con sus respectivos IDs.
 }
-\keyword{datasets}

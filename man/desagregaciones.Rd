@@ -7,7 +7,8 @@
 desagregaciones()
 }
 \value{
-Un vector de clase "character" con los nombres de las columnas de desagregación.
+Un vector de clase "character" con los nombres de las columnas de
+desagregación.
 }
 \description{
 Desagregaciones de SIMEL

@@ -15,7 +15,13 @@ simplificar_tabla(df, redondear = TRUE)
 Un objeto de clase "data.frame" simplificado.
 }
 \description{
-Simplifica las tablas de SUSESO seleccionando las  columnas más importantes. Además, redondea  los valores al número de decimales establecidos en cada tablas.
+Simplifica las tablas de SUSESO seleccionando las  columnas más importantes.
+Además, redondea  los valores al número de decimales establecidos en cada
+tablas.
+}
+\note{
+En el caso de las tablas que utilizan la ENE, los trimestres móviles se
+transforma la variable fecha utilizando como referencia el mes central.
 }
 \examples{
 \dontrun{

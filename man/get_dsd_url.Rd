@@ -7,10 +7,12 @@
 get_dsd_url(dataflow)
 }
 \arguments{
-\item{dataflow}{Un único valor de clase "character" con el nombre del dataflow (id en tabla indicadores).}
+\item{dataflow}{Un único valor de clase "character" con el nombre del
+dataflow (id en tabla indicadores).}
 }
 \value{
-Un único valor de clase "character" con la url de la API para la metadata.
+Un único valor de clase "character" con la url de la API para la
+metadata.
 }
 \description{
 Obtener url API SIMEL Chile (metadata)
