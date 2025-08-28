@@ -15,3 +15,6 @@ usethis::use_package(
 1
 
 usethis::use_package("rsdmx", type = "Imports")
+
+# haven::as_factor(prueba_2)
+# haven::print_labels(prueba_2$AREA_REF)
