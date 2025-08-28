@@ -10,4 +10,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     rsdmx,
-    dplyr
+    dplyr,
+    haven,
+    stringr,
+    lubridate
+Depends: 
+    R (>= 3.5)
+LazyData: true

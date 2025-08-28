@@ -3,4 +3,8 @@
 export(get_data)
 export(get_data_url)
 export(get_dsd_url)
+export(lista_indicadores)
 export(simplificar_tabla)
+export(timeperiod_to_date)
+export(to_labelled)
+export(ver_lista_indicadores)
