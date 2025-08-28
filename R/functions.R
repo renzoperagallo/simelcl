@@ -357,7 +357,7 @@ to_labelled <- function(df, col_name, labels_dictionary){
 
   out <-
     df |>
-    mutate(
+    dplyr::mutate(
       !!dplyr::sym(col_name) := haven::labelled(
         !!dplyr::sym(col_name),
         labels = labels_dictionary
@@ -403,7 +403,7 @@ labelizar_df <- function(df){
     purrr::map2(
       columnas_codes,
       columnas_labels,
-      ~create_labels_dictionary(prueba, .x, .y)
+      ~create_labels_dictionary(df, .x, .y)
     )
 
   # Labeliza las columnas
