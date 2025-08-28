@@ -8,5 +8,6 @@
 #'   \item{Tabla}{Nombre de la tabla de datos.}
 #'
 #' }
-#'
-"tabla_indicadores"
+#' @docType data
+#' @name tabla_indicadores
+NULL
