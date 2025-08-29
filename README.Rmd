@@ -76,7 +76,7 @@ head(df_simplificado, 5)
 
 ```
 
-La función anterior une las columnas con sus respectivas etiquetas y las formatea como clase `haven::labelled()` que es un tipo de dato carácter más su etiqueta. En la tabla de datos se guarda el valor de la variable, por ejemplo, sexo "H", "M" o "AS", así como su diccionario. A este último se puede acceder  utilizando el paquete `haven`: 
+La función anterior une las columnas con sus respectivas etiquetas y las formatea como clase `haven::labelled()` que es un tipo de dato carácter más su etiqueta. En la tabla de datos se guarda el valor de la variable, por ejemplo, sexo "F", "M" o "AS", así como su diccionario. A este último se puede acceder  utilizando el paquete `haven`: 
 
 ```{r ver diccionario}
 
@@ -98,7 +98,7 @@ head(df_con_etiquetas, 5)
 
 Si solo se quiere transformar una de las variables, se puede aplicar la función sobre dicha variable:
 
-```{r transformar etiquetas variable}
+```{r transformar etiquetas variable, message=FALSE}
 library(dplyr)
 
 df_etiquetado_sexo <- mutate(df_simplificado, sexo_etiquetado = haven::as_factor(SEXO)) 

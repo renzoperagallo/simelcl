@@ -108,7 +108,7 @@ head(df_simplificado, 5)
 La función anterior une las columnas con sus respectivas etiquetas y las
 formatea como clase `haven::labelled()` que es un tipo de dato carácter
 más su etiqueta. En la tabla de datos se guarda el valor de la variable,
-por ejemplo, sexo “H”, “M” o “AS”, así como su diccionario. A este
+por ejemplo, sexo “F”, “M” o “AS”, así como su diccionario. A este
 último se puede acceder utilizando el paquete `haven`:
 
 ``` r
@@ -146,14 +146,6 @@ función sobre dicha variable:
 
 ``` r
 library(dplyr)
-#> 
-#> Adjuntando el paquete: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 
 df_etiquetado_sexo <- mutate(df_simplificado, sexo_etiquetado = haven::as_factor(SEXO)) 
 
