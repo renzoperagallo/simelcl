@@ -151,9 +151,9 @@ desagregaciones <- function(){
 #' @examples
 #' \dontrun{
 #' df <- get_data("TP_SEXO")
-#' df_v2 <- simplificar_tabla(df)
+#' df_v2 <- simplificar(df)
 #' }
-simplificar_tabla <- function(df, redondear = TRUE){
+simplificar <- function(df, redondear = TRUE){
 
   decimales <- as.integer(unique(df$DECIMALS))
 
@@ -296,13 +296,17 @@ lista_indicadores <- function(){
 #' @description
 #' Imprime la lista de indicadores.
 #'
+#' @param n Número de filas a imprimir.
+#'
 #' @returns Print de la lista de indicadores.
 #' @export
 #'
 #' @examples
 #' ver_lista_indicadores()
-ver_lista_indicadores <- function(){
-  print(tabla_indicadores, n = 1000)
+ver_lista_indicadores <- function(n = 1000){
+  tabla_indicadores |>
+    tibble::as_tibble() |>
+    print(n = n)
 }
 
 #' Crea un diccionario de  valores de una columna.
@@ -333,8 +337,6 @@ create_labels_dictionary <- function(df, col_codes, col_labels){
 
   return(out)
 }
-
-# diccionario <- create_labels_dictionary(prueba, "AREA_REF", "AREA_REF_label.es")
 
 #' Labeliza una columna
 #'

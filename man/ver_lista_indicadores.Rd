@@ -4,7 +4,10 @@
 \alias{ver_lista_indicadores}
 \title{Ver lista de indicadores}
 \usage{
-ver_lista_indicadores()
+ver_lista_indicadores(n = 1000)
+}
+\arguments{
+\item{n}{Número de filas a imprimir.}
 }
 \value{
 Print de la lista de indicadores.
