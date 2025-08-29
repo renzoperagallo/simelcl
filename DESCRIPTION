@@ -2,7 +2,10 @@ Package: simelcl
 Title: Datos SIMEL Chile
 Version: 0.0.1.9000
 Authors@R: 
-    person("Renzo", "Peragallo", , "renzo.ignacio.pd@gmail.com", role = "aut")
+    person(given = "Renzo Ignacio",
+           family = "Peragallo Díaz",
+           email = "renzo.ignacio.pd@gmail.com",
+           role = c("aut", "cre"))
 Description: Permite descargar datos de SIMEL Chile directo en R en un formato amable.
 License: MIT + file LICENSE
 Encoding: UTF-8

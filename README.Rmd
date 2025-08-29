@@ -1,0 +1,108 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# simelcl
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+El paquete `simelcl` permite acceder a los datos del Sistema de Información del Mercado Laboral de (Chile) directo en R. Se accede a los datos directamente desde la API de SIMEL Chile por lo que se encuentran actualizados constantemente. 
+
+Además, se provee una función de simplificación de los datos que permite transformar en formato fecha los periodos, quitar columnas extras y etiquetar los datos. 
+
+## Instalación
+
+Se puede instalar la versión de desarrollo de simelcl desde [GitHub](https://github.com/) con:
+
+``` r
+# install.packages("pak")
+pak::pak("renzoperagallo/simelcl")
+```
+
+## Ejemplo
+
+A continuación, se presenta un ejemplo básico para descargar datos desde SIMEL y simplificar el dataset. 
+
+Para ver la lista completa de  tablas disponibles, puede usar: 
+
+```{r ejemplo lista}
+library(simelcl)
+
+# Imprime en la terminal la lista de indicadores
+ver_lista_indicadores(n = 5) # Solo muestra los primeros 5 registros de la tabla.
+```
+
+O asignarla a un objeto para verla directamente desde el visualizador de Rstudio.
+
+```{r ejemplo lista 2, eval=FALSE}
+
+indicadores <- lista_indicadores()
+
+View(indicadores)
+
+```
+
+La columna id indica el nombre en sistema de la tabla.  Con este valor se puede descargar la tabla correspondiente. Por ejemplo:
+
+```{r ejemplo descarga}
+
+df <- get_data("TP_SEXO")
+
+head(df, 5)
+
+```
+
+Lo anterior descarga el dato en el mismo formato que se descarga al utilizar "Download unfiltered CSV" en la plataforma web. 
+
+Si se quiere dar un formato más amable a la tabla, se puede usar la siguiente función: 
+
+```{r simplificar datos}
+
+df_simplificado <- simplificar(df)
+
+head(df_simplificado, 5)
+
+```
+
+La función anterior une las columnas con sus respectivas etiquetas y las formatea como clase `haven::labelled()` que es un tipo de dato carácter más su etiqueta. En la tabla de datos se guarda el valor de la variable, por ejemplo, sexo "H", "M" o "AS", así como su diccionario. A este último se puede acceder  utilizando el paquete `haven`: 
+
+```{r ver diccionario}
+
+library(haven)
+
+haven::print_labels(df_simplificado$SEXO)
+
+```
+
+En algunos casos se puede requerir utilizar las etiquetas (labels) en vez de los niveles de la variable. Para reemplazar los valores por sus etiquetas se puede utilizar nuevamente el paquete `haven`:
+
+```{r transformar etiquetas}
+
+df_con_etiquetas <- haven::as_factor(df_simplificado)
+
+head(df_con_etiquetas, 5)  
+
+```
+
+Si solo se quiere transformar una de las variables, se puede aplicar la función sobre dicha variable:
+
+```{r transformar etiquetas variable}
+library(dplyr)
+
+df_etiquetado_sexo <- mutate(df_simplificado, sexo_etiquetado = haven::as_factor(SEXO)) 
+
+head(df_etiquetado_sexo, 5)  
+
+```
